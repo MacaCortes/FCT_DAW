@@ -137,8 +137,8 @@ caja de cookies *******************/
 }
 
 
-#minilogoHidden{    
-    max-width:50%;
+.minilogoHidden{    
+
     margin-top:-50px;
     
 }
@@ -149,9 +149,7 @@ caja de cookies *******************/
 }
 .menutop {
     background-color: cadetblue;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    
     justify-content: space-around;
 }
 
@@ -698,10 +696,13 @@ contenMenu{
     }
 }
 @media (max-width:920px) {
+      .conten5{
+        width:auto;
+    }
     .conten6{
         width:70%;
     }
-    
+   
 }
 
 

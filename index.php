@@ -35,7 +35,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/estilo.css" />
         <link rel="stylesheet" href="css/fontawesome/css/all.css" />
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="/resources/demos/style.css">
+      
         <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
@@ -75,26 +75,22 @@ and open the template in the editor.
                <?php echo "<h2 class='mensaje'>".$men ."</h2>" ?>
             </div>
         </header>       
-        <div class="menutop" id="mymenutop">
-            <div id="login">
+        <div class=" menutop" id="mymenutop">
+            <div class="row" id="login">
                 <form action="primerAcceso.php" method="POST"> 
                     <!--estos input van a cambiar en relacion si ha iniciado sessiion o no -->
                     <?php
                     if ($ok != true):
                         ?>
+                    <div class="col-12">
                     <input type="submit" name="nuevo" value="Nuevo Usuario" />
-                   <input type="submit" name="viejo" value="Iniciar Sesiòn" />
+                    <input type="submit" name="viejo" value="Iniciar Sesiòn" />
+                    </div>
                         <?php
                    elseif ($ok == true):
                        session_start();
                       if (isset($_SESSION['borrar'])) {
-                           if ($_SESSION['borrar'] == "borrado") {                              
-                                 ?>
-                   <script type="text/javascript">
-                      alert("usuario eliminado");
-                      location.reload();;</script>
-                              <?php
-                               echo $_SESSION['borrar'];
+                           if ($_SESSION['borrar'] == "borrado") {                                                          
                                session_unset($_SESSION['login']);
                                session_destroy();
                                $ok = false;
@@ -114,12 +110,13 @@ and open the template in the editor.
                 </form>
             </div>
             <div id="navegacion">
-                <nav id="menu">
-                    <div id="minilogoHidden"><img src="imagenes/logopngMini.png"  style="display:hidden" alt="LOgo ComeBienSano mini"/></div>
+                <nav id="menu"> 
+                    <div class="hijo" id="minilogoHidden"><img class ="minilogoHidden" style="max-width:70%; " src="imagenes/logopngMini.png"  style="display:hidden" alt="LOgo ComeBienSano mini"/></div>
                     <a class="hijo" href="#idiomas">Inicio</a>
                     <a class="hijo" href="#menus">Menus</a>
                     <a class="hijo" href="#kits">Kits-Alimentos</a>
                     <a class="hijo" href="#contacto">Contacto</a>
+                     
                 </nav>
             </div>
         </div>
@@ -320,38 +317,38 @@ and open the template in the editor.
                </div>
                 <h2 class="font orange text-center paddingbtn">KITS de ALIMENTOS <br/>como funciona</h2>
            
-            <div class="contenedor2">
+            <div class="row justify-content-md-center">
 
-                <div class="conten4">
+                <div class="col-lg-3 col-md-6 conten4">
                     <img src="imagenes/img11ComeBienSano.jpg" alt="img7ComeBienSano.png">
                 </div>
-                <div class="conten5">
+                <div class="col-lg-3 col-md-6 conten5">
                     <h3>Elige tus comidas</h3>
                     <p>Te ofrecemos muchas recetas,variadas y apetitosas.Todas saludables. Solo tienes que elegir tu preferida.</p>
                 </div>
-                <div class="conten4">
+                <div class="col-lg-3 col-md-6  conten4">
                     <img src="imagenes/img12ComeBienSano.jpg" alt="img7ComeBienSano.png">
                 </div>
-                <div class="conten5">
+                <div class="col-lg-3 col-md-6 conten5">
                     <h3>Te llevamos el KITs</h3>
                     <p>en menos de 24h recibes tus productos.Envasados perfectamente para seguir manteniendo sus propiedades.</p>
                 </div>
             </div>
-              <div class="contenedor2">
+              <div class="row justify-content-md-center">
                 
-                <div class="conten5">
+                <div class="col-lg-3 col-md-6 conten5">
                     <h3>Desempaqueta tu caja</h3>
                     <p>Garantizamos la frescura de todos nuestros ingredientes y los entregamos en una caja aislada hasta tu propia puerta.</p>
                 </div>
-                <div class="conten4">
+                <div class="col-lg-3 col-md-6 conten4">
                     <img src="imagenes/img14ComeBienSano.jpg" alt="img14ComeBienSano.png">
                 </div>
                
-                <div class="conten5">
+                <div class="col-lg-3 col-md-6 conten5">
                     <h3>Cocina, crea y disfruta</h3>
                     <p>Siga nuestras sencillas recetas paso a paso para aprender nuevas habilidades,probar nuevos sabores y preparar comidas increibles para su familia, o amigos.</p>
                 </div>
-                   <div class="conten4">
+                   <div class="col-lg-3 col-md-6 conten4">
                     <img src="imagenes/img13ComeBienSano.jpg" alt="img13ComeBienSano.png">
                 </div>
             </div> 

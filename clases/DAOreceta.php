@@ -11,6 +11,7 @@ class DAOreceta{
 public function DAOreceta(){
     
 }  
+//insertamos una nueva receta
 public function insertar($objeto_receta){
         try{
         $conexion=new Conexion();
@@ -97,7 +98,7 @@ public function insertar($objeto_receta){
         return $tabla; 
     }//fin de listar
      
-    //elimina el plato cuya id pasamos por parametro
+    //elimina el plato cuya id pasamos por parametro, la utiliza el adminisrador para eliminar las ecetas.
     public function eliminar($id_receta){        
          try{
         $conexion=new Conexion();

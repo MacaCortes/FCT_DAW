@@ -302,9 +302,9 @@ public function comprobarPedidos($id_usuario){
             $conexion = new Conexion();
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $conexion->exec('SET CHARACTER SET utf8');   
-            $sentancia = "SELECT pl.nombre_plato , p.fecha_envio,dp.estado ,p.id_pedido,p.id_receta, COUNT(pl.nombre_plato) as num "
-                    . "FROM pedidos p JOIN detalle_pedido dp ON (p.id_pedido = dp.id_pedido) "
-                    . "JOIN platos pl on (dp.id_plato= pl.id_plato) WHERE p.fecha_envio ='".$fecha."' GROUP by pl.nombre_plato";
+            $sentancia = "SELECT pl.nombre_plato , p.fecha_envio,dp.estado ,p.id_pedido,p.id_receta, COUNT(pl.nombre_plato) as num , a.apto FROM pedidos p JOIN detalle_pedido dp ON (p.id_pedido = dp.id_pedido) "
+                    . "JOIN platos pl on (dp.id_plato= pl.id_plato) "
+                    . "JOIN platos_aptos a on (pl.apto_p= a.id_apto) WHERE p.fecha_envio ='".$fecha."' GROUP by pl.nombre_plato";
             $resultado = $conexion->prepare($sentancia);
            // $resultado->bindValue(":fecha",$fecha);           
             $resultado->execute(); 
@@ -314,12 +314,14 @@ public function comprobarPedidos($id_usuario){
              $tabla = "<table  class='table  table-hover'>"                   
                     . "<th class='bg-warning' scope='col'>nombre Plato</th>";
             $tabla .= "<th class='bg-warning' scope='col'>cantidad </th>";
+            $tabla .= "<th class='bg-warning' scope='col'>Tipo apto</th>";
             $tabla .= "<th class='bg-warning' scope='col'>fecha_envio</th>";
             $tabla .= "<th class='bg-warning' scope='col'>Estado PLATO</th>";                          
               while($row = $resultado->fetch(PDO::FETCH_ASSOC)){               
                 $tabla .= '<tr>';                                     
                 $tabla .= '<td >' . $row['nombre_plato'] . '</td>';                 
                 $tabla .= '<td >' . $row['num'] . '</td>'; 
+                $tabla .= '<td >' . $row['apto'] . '</td>'; 
                 $tabla .= '<td >' . $row['fecha_envio']. '</td>';
                
                 $tabla.= "<td><form action='' method='POST'>" 

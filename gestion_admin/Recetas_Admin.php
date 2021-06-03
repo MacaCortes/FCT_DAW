@@ -27,10 +27,8 @@ if (isset($_POST['cerrar_session'])) {
 }
 //en REcetas añadir una nueva receta.:
 if(isset($_POST["newReceta"])){
-//construct($dificultad_r,$link_video,$link_doc_receta,$id_plato,$precio_receta) {
    $dificultad_r=htmlspecialchars($_POST["dificultad"]);
    $link_video= htmlspecialchars($_POST["link"]); 
-  // $link_doc_receta=htmlspecialchars($_POST["image"]);
    $id_plato=htmlspecialchars($_POST["id_plato"]);
    $precio=htmlspecialchars($_POST["precio"]);
    $precio_receta= floatval($precio); 

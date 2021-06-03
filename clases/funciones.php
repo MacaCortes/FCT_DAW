@@ -65,7 +65,7 @@ function mostrarAptos(){
 }
    $resultado->closeCursor();
 }
-
+//funcion que utilizo en web para saber el nombre de tipo apto selecionado por el ususario comó (Basico, celiacos,...)
 function darnombreApto($apto){
    try {
         $conexion = new Conexion();
@@ -180,7 +180,7 @@ return $file_path;
 
 }
 
-// funcio que me crea el formulario de insettar un trabajador
+// funcion que me crea el formulario de insetar un nuevo trabajador
 //es el mismo que el de usuario comun. y la accion se ejecuta igual
 function crearform(){
 

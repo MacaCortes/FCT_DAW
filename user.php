@@ -1,11 +1,16 @@
 <?php
+// esta es la ventana emergente que va salir cuando le damos al boton con nuestro nombre en el menu de inicio una vez logueados
+//añadimos las clases
 require 'clases/funciones.php';
 spl_autoload_register(function ($clase) {
   require_once "clases/$clase.php";
 });
+//iniciamos sesion 
 session_start();
+// creamos para poder usara sus metodos
 $dao_u=new DAOusuario();
 $dao_receta=new DAOreceta();
+//si no esta la sesion iniciada nos manda al index (tampoco podriamo haberle dado al boton
 if(!isset(($_SESSION['loginUsuario']))){
    header('location:../index.php');
    exit(); 
@@ -15,8 +20,11 @@ $dni = $_SESSION['loginUsuario']['DNI'];
 $id_usuario = $_SESSION['loginUsuario']['id_usuario'];
 $dao_pedido = new DAOpedido();
 $modificar = "modificar";
+// tabla_mod va a ser la tabla para poder modificar datos
 $tabla_mod = $dao_u->mostrarTablaDatos($id_usuario,$modificar);
+/// la tabla $tabla listara los pedidos de este ususario
 $tabla=$dao_pedido->listarPedido($id_usuario);
+// la tablaconLinks nos pasa los links de descarga si el usurio tiene kits de alimentos
 $tablaconLinks=$dao_receta->listarLinkreceta($id_usuario);
 if (isset($_POST['modificar'])) {    
     $nombre =$_POST['nombre']; 
@@ -30,6 +38,7 @@ if (isset($_POST['modificar'])) {
     $telefono = $_POST['telefono'];
     $_SESSION['loginUsuario']['telefono']=$telefono;
   //  var_dump($_SESSION['loginUsuario']);   
+    // recogemos los nuevos datos del ususarios y los actulaoizamos en la base de datos
     $mensaje=$dao_u->modificar($id_usuario, $nombre,$apellidos,$direccion,$email,$telefono);
    
 }
@@ -52,11 +61,7 @@ if (isset($_POST['borrar'])) {
 ?>
 
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <meta charset="UTF-8" />

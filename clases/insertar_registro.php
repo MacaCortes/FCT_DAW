@@ -1,4 +1,8 @@
 <?php
+// aqui comprobamos los resultados extraidos de los formularios de nuevo ususario, y de iniciar sesion. 
+// tambien cuado un administrador registra un nuevo trabajador
+//funciones para registros de ususarios. dependera sl tipo de ususario.
+
 /*una vez comprobado por funciones de js que los datos introducidos son correctos pasamos a introducirlos a la base de datos
  */ 
 

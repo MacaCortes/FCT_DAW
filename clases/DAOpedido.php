@@ -48,6 +48,7 @@ public function insertar_pedido($objeto_pedido){
     }
 
     //inserto en detalle pedido los platos selecionados con la id del pedido
+    //cuando un usuario realiza un pedido de menu selecion de platos van a detalle_pedido
     public function insertar_detalle_pedido($id_pedido,$arrayId_plato){
         try{
         $conexion=new Conexion();
@@ -75,7 +76,8 @@ public function insertar_pedido($objeto_pedido){
 }
        
     }
- //funcion para comprobar si un plato esta en pedido para poder borarlo o no (el plato)
+ //funcion para comprobar si un plato esta en pedido para poder borarlo o no (el plato). en administrador cuando quiereborrar un plato
+    //si el plato esta en algun pedio no se podra eliminar
  public function platoEnPedidos($id_plato){
       try{
         $conexion=new Conexion();
@@ -110,7 +112,8 @@ public function insertar_pedido($objeto_pedido){
  }
 return $mensaje;
  }
-//listado de pedido por usuario
+ 
+//listado de pedido por usuario en administrador para listar todos los pedidos 
     public function listarPedidoCompleto(){
    
      try{
@@ -162,7 +165,7 @@ return $mensaje;
      
     }
 
- //listado de pedido por usuario
+ //listado de pedido por usuario; la utilizo cuando un ususario quire ver sus pedidos
     public function listarPedido($id_usuario){
    
      try{
@@ -231,7 +234,7 @@ return $mensaje;
         return $tabla; 
      
     }
- //comprobamos si el usuaario tiene al gun pedido que no este finalozado, esta funcion la utilizo para luego poder borrar el ususario o no.  
+ //comprobamos si el usuaario tiene al gun pedido que no este finalizado, esta funcion la utilizo para luego poder borrar el ususario o no.  
 public function comprobarPedidos($id_usuario){
      try{
         $conexion=new Conexion();
@@ -262,7 +265,7 @@ public function comprobarPedidos($id_usuario){
 }
 
 
-    //listado de todos los platos selecionados en un menu , por id_pedido
+    //lista los platos selecionados en un pedido. cuando realiza un pedido menu elige muchos platos ,,
     public function listardetallesPlatospedido($id_pedido){
          try{
              
@@ -296,6 +299,7 @@ public function comprobarPedidos($id_usuario){
      
     }//fin de listardetalles
        
+    // en administracon. sale el listado de los pedido dependiendo de la fecha elegida. esta fecha ya nos viene determinada que el pedido esta en proceso
     public function listarXfechaSelecionada($fecha){
       
           try {
@@ -395,7 +399,7 @@ public function comprobarPedidos($id_usuario){
 return $id_pedido;
     }
     
-    
+    // funcion que cambia el estaddo final de la tabla pedidos cuando todos sus platos ya estan preparados,
     public function cambioestadoPedio($id_pedido){
        
         try {
@@ -428,7 +432,7 @@ return $id_pedido;
 }
  
     
-
+//cambia el estado_funal a entregado cuando el repartido he realizado su trabajo 
     public function cambioEstadoFinal($id_pedido){
        try{
         $conexion=new Conexion();
@@ -450,7 +454,7 @@ return $id_pedido;
 return $mensaje;
     }
      
-
+//para administracion lista las fechas donde hay platos aun en estado de enproceso don de los pedidos estan en proceso
      public function listarFechaspedidos(){
         try {
         $conexion=new Conexion();
@@ -480,7 +484,7 @@ return $lista;
     }
   
 
-        
+  //listado que aparece cuando el usuario hea realizado un pedido de recetas para confirmar el pedido      
  public function listapedidoReceta($id_pedido){
        try {
          
@@ -502,7 +506,7 @@ return $lista;
           $tabla .='<tr><td>ESTADO:<strong class="paddingbtn"> '. $muestra['estado_final'].'</strong></td>';
           $tabla .='<td>DIFICULTAD:<strong class="paddingbtn"> '. $muestra['dificultad_r'].'</strong></td></tr>';
           $tabla .='<tr><td><a class="paddingbtn" href="'.$muestra['link_video'] .' "> Enlace al video </a></td></tr>';
-          $tabla .='<tr><td><a class="paddingbtn" download href="'.$muestra['link_doc_receta'].'"> DESCARGA TU RECETA</a></td></tr>';
+          $tabla .='<tr><td><a class="paddingbtn" download href="'.$muestra['link_doc_receta'].'" target="_blank"> DESCARGA TU RECETA</a></td></tr>';
           $tabla .='<tr><td><i class="fas fa-utensils"></i><br/><strong class="paddingbtn">'. $muestra['nombre_plato'].'</strong></td>';
           $tabla .='<td><img class="tfoto_peque" style="aling:center;"src="'.$muestra['foto_p'].'" alt="imagen plato escogido"/></td></tr>';
           
@@ -519,7 +523,7 @@ return $lista;
   return $tabla;
     }
      
- //listado que aparecera en REPARTO: el estado sera el que este en pedidos estado_final
+ //listado que aparecera en REPARTO: listado para el repartidor. listara todos los pedidos para repartir
  public function listarXestadoREparto(){
       
           try {

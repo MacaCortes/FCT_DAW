@@ -1,5 +1,5 @@
 <?php
-
+/*
 class SesionLogin{   
    private $dni;
    private $pass;  
@@ -25,3 +25,4 @@ class SesionLogin{
     
 }//fin cerrar Session
 
+*/

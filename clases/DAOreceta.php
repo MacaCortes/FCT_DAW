@@ -98,7 +98,7 @@ public function insertar($objeto_receta){
         return $tabla; 
     }//fin de listar
      
-    //elimina el plato cuya id pasamos por parametro, la utiliza el adminisrador para eliminar las ecetas.
+    //elimina receta cuya id pasamos por parametro, la utiliza el adminisrador para eliminar las recetas.
     public function eliminar($id_receta){        
          try{
         $conexion=new Conexion();
@@ -223,6 +223,7 @@ public function insertar($objeto_receta){
      }  //fin de insertar en web
      
      
+     //listado que aparece en la web listado de las recetas primeros , segundos , postrees(tipos)
      public function selectRecetaWeb($tipo){
          try{
         $conexion=new Conexion();

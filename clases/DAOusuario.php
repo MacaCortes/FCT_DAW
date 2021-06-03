@@ -47,7 +47,7 @@ public function insertar($objeto_usuario){
         return $mensaje; 
     }//fin de funcion guardar
     
-    //comprueba si el usuario esta en la base de datos;
+    //comprueba si el usuario esta en la base de datos; y su ususario y contreña son correctos
     public function comprueba($dni,$pass){ 
         try{       
         $conexion=new Conexion();
@@ -106,6 +106,8 @@ public function insertar($objeto_usuario){
     } //fin de comprueba login
     
      
+    
+    // esa funcion la utilizo para asignar a cada ususario su sesion
     public function mandar($tipo){   
         
          if(!isset($_SESSION['login'])){
@@ -158,7 +160,7 @@ public function insertar($objeto_usuario){
        
     }//fin de metodo mandar
     
-    
+    //tablas para mostrar datos de un usuario o modificar los datos
      public function mostrarTablaDatos($id,$modificar=null,$array=null){
        
           try{       
@@ -232,6 +234,7 @@ public function insertar($objeto_usuario){
        return $tabla;
     } //fin demostrar
     
+    // Actuliza los datos de ususario si han sido modificados
      public function modificar($id_ususario, $nombre,$apellido,$direccion,$email,$telefono){        
           try{       
         $conexion=new Conexion();
@@ -266,6 +269,8 @@ public function insertar($objeto_usuario){
        $resultado->closeCursor();
       
     } //fin modificar
+    
+    // elimina ususario boton de eliminar usuario 
     public function eliminarUsuario($id_usuario){
          try{
         $conexion=new Conexion();
@@ -288,7 +293,7 @@ public function insertar($objeto_usuario){
         
     }
 
-
+// en administrador : listado de los trabajadores, para luego poder modificar datos o eliminarlos
     public function listarTrabajador(){
            try{
         $conexion=new Conexion();

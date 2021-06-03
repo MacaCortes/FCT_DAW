@@ -100,7 +100,7 @@ public function DAOplato(){
         return $mensaje;         
     }//fin de eliminar
     
-   
+  
     public function modificar($objeto_plato){
      $c= conectar();
      $id_plato=$objeto_plato->getid_plato();
@@ -272,7 +272,8 @@ public function DAOplato(){
  
     }//fin de dselec menu
     
-    /**insertaremos en la tabla platos web los elementos seleccionadossegun id_plato*/
+    /**insertaremos en la tabla platos web los elementos seleccionados segun id_plato
+utilizo en adminstracion      */
      public function insertar_platosWEB($id){
        
       try {
@@ -364,6 +365,8 @@ en esta funcion calculo el precio total de los platos escogidos en el menu
             
      }
      
+     //lista los nombre de los platos dependiendo del tipo 
+     //la utilizo en administracion en recetas par listar todos los platos
      public function listarnombreplatos($tipo){
       
          try {

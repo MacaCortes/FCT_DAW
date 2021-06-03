@@ -22,14 +22,15 @@ if (isset($_POST['cerrar_session'])) {
     header("location:index.php?ok=$ok");
     exit();
 }
-//decllasro variables que voy a usar.
+//declaro variables que voy a usar.
 $dao_receta=new DAOreceta();
 $dao_pedido=new DAOpedido();
 $nombre = $_SESSION['loginUsuario']['nombre'];
 $id = $_SESSION['loginUsuario']['id_usuario'];
 $mensaje = "";
+// recoge el tipo de receta que ha escogido pero como tengo pocas las listo todas
 if(isset($_POST['receta'])){
-  //  $listaRecetas=$dao_receta->selectRecetaWeb($tipo);
+  //  
    $tipo=$_POST['receta'];
    $nombretipo= darnombreTipo($tipo);
 }

@@ -23,7 +23,6 @@ $dia_manana = date('d',time()+84600);
 $mes_manana = date('m',time()+84600);
 $ano_manana = date('Y',time()+84600);
 $fechaMañana= $dia_manana."/".$mes_manana."/".$ano_manana;
-//$fechaMañana="03/06/2021";
 $tablacocinar=$dao_pedido->listarXfechaSelecionada($fechaMañana);
 if(isset($_POST['aReparto'])){
         $nombre_plato=$_POST['nombre_plato'];

@@ -111,7 +111,7 @@ and open the template in the editor.
             </div>
             <div id="navegacion">
                 <nav id="menu"> 
-                    <div class="hijo" id="minilogoHidden"><img class ="minilogoHidden" style="max-width:70%; " src="imagenes/logopngMini.png"  style="display:hidden" alt="LOgo ComeBienSano mini"/></div>
+                    <div id="minilogoHidden"><img class ="minilogoHidden" style="max-width:70%; " src="imagenes/logopngMini.png"  style="display:hidden" alt="LOgo ComeBienSano mini"/></div>
                     <a class="hijo" href="#idiomas">Inicio</a>
                     <a class="hijo" href="#menus">Menus</a>
                     <a class="hijo" href="#kits">Kits-Alimentos</a>

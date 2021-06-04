@@ -64,7 +64,7 @@ if (isset($_POST['darId_Kit'])){
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"/>
-        <title>Web ComeBienSano Repoarto </title>
+        <title>Web ComeBienSano Reparto </title>
     </head>
     <body>
         <header class=" banner">

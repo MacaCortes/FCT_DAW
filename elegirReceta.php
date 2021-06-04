@@ -88,7 +88,7 @@ if(isset($_POST['continuar_pedido'])){
         <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script> 
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"/>
-        <title>Elegir menú</title>
+        <title>Elegir receta</title>
     </head>
     <body>
 

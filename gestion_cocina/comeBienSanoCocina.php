@@ -36,8 +36,9 @@ if(isset($_POST['aReparto'])){
         $tablacocinar=$dao_pedido->listarXfechaSelecionada($fechaMañana);
 }
 if (isset($_POST["proximo"]))  {
-    $fechaMañana = $_POST['fecha'];
-    $tablacocinar = $dao_pedido->listarXfechaSelecionada($fechaMañana);
+    $fecha = $_POST['fecha'];
+  
+    $tablacocinar = $dao_pedido->listarXfechaSelecionada($fecha);
     //echo $tablacocinar;
 }
 ?>

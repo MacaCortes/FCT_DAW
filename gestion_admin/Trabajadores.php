@@ -55,7 +55,7 @@ if (isset($_POST['modificar'])) {
 }
 if (isset($_POST['borrar'])) { 
       $id_user=$_POST['id_usuario'];
-      echo $id_user;
+      //echo $id_user;
       if($id_user!='16'){
       $men=$dao_u->eliminarUsuario($id_user);
       $mensaje= "<h2 class='orange'style='padding: 0.5em;'>".$men."</h2>";

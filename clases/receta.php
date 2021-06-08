@@ -8,6 +8,7 @@ private $link_video;
 private $link_doc_receta;
 private $id_plato;
 private $precio_receta;
+
 const TABLA= 'recetas';
 
 public function __construct($dificultad_r,$link_video,$link_doc_receta,$id_plato,$precio_receta) {
@@ -17,6 +18,7 @@ public function __construct($dificultad_r,$link_video,$link_doc_receta,$id_plato
     $this->link_doc_receta=$link_doc_receta;
     $this->id_plato=$id_plato;
     $this->precio_receta=$precio_receta;
+    $this->estado=$estado;
 }
 //funciones getters 
 
@@ -38,7 +40,7 @@ public function __construct($dificultad_r,$link_video,$link_doc_receta,$id_plato
      public function getprecio_receta(){
         return $this->precio_receta;
     }
-    
+
     // settters
     
     public function setid_receta($valor){
@@ -59,6 +61,7 @@ public function __construct($dificultad_r,$link_video,$link_doc_receta,$id_plato
      public function setprecio_receta($valor){
         $this->precio_receta==$valor;
     }
+   
     public function __toString() {
         echo $this->id_plato;
     }

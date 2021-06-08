@@ -14,12 +14,12 @@ class pedido{
  private $precio_total;
  private $id_receta;
  
- public function __construct($fecha_envio,$id_usuario,$precio_total,$id_receta) {
+ public function __construct($fecha_envio,$id_usuario,$precio_total,$id_receta,$estado) {
      $this->fecha_envio=$fecha_envio;
      $this->id_usuario=$id_usuario;    
      $this->precio_total=$precio_total;
      $this->fecha_pedido=$fechaActual = date('d-m-Y');
-     $this->estado="en proceso";
+     $this->estado=$estado;
      $this->id_receta=$id_receta;
  }
 

@@ -505,7 +505,7 @@ return $lista;
           $tabla .='<td>FECHA_ ENVIO:<strong class="paddingbtn"> '. $muestra['fecha_envio'].'</strong></td></tr>';
           $tabla .='<tr><td>ESTADO:<strong class="paddingbtn"> '. $muestra['estado_final'].'</strong></td>';
           $tabla .='<td>DIFICULTAD:<strong class="paddingbtn"> '. $muestra['dificultad_r'].'</strong></td></tr>';
-          $tabla .='<tr><td><a class="paddingbtn" href="'.$muestra['link_video'] .' "> Enlace al video </a></td></tr>';
+          $tabla .='<tr><td><a class="paddingbtn" href="'.$muestra['link_video'] .' " target="_blank" > Enlace al video </a></td></tr>';
           $tabla .='<tr><td><a class="paddingbtn" download href="'.$muestra['link_doc_receta'].'" target="_blank"> DESCARGA TU RECETA</a></td></tr>';
           $tabla .='<tr><td><i class="fas fa-utensils"></i><br/><strong class="paddingbtn">'. $muestra['nombre_plato'].'</strong></td>';
           $tabla .='<td><img class="tfoto_peque" style="aling:center;"src="'.$muestra['foto_p'].'" alt="imagen plato escogido"/></td></tr>';

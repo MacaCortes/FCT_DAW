@@ -313,7 +313,7 @@ public function insertar($objeto_receta){
          $tabla = "<table   class='table  table-hover'>";
          $tabla .= "<tr> descarga listado de ingredientes a preparar del pedido ".$id_pedido."</tr>";
         while($muestra = $resultado->fetch(PDO::FETCH_ASSOC)){
-           $tabla .= '<tr><td><a class="paddingbtn" download href="'.$muestra['link_doc_receta'].'"> DESCARGA TU RECETA</a></td></tr>' ;  
+           $tabla .= '<tr><td><a class="paddingbtn" download href="'.$muestra['link_doc_receta'].'"> DESCARGA LISTA DE INGREDIENTES</a></td></tr>' ;  
         }
          $tabla .= '</table>';
         

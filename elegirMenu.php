@@ -131,8 +131,10 @@ if (isset($_POST['continuar_pedido'])) {
     $arrayId_plato = $_SESSION['menu']['ID_platos'];
     $nombreapto = $_SESSION['menu']['nombreapto'];
     $id_receta="";
-    $pedido_receta = new pedido($fecha, $id_usuario, $precioTotal,$id_receta);    
-    $estado=$pedido_receta->getestado();
+    $estado="en proceso";
+   //$pedido_receta=new pedido($fecha_envio, $id_usuario, $precio_total, $id_receta, $estado);
+    $pedido_receta = new pedido($fecha, $id_usuario, $precioTotal,$id_receta,$estado);    
+   // $estado=$pedido_receta->getestado();
     $_SESSION['menu']['estado']=$estado;
 //inserto el pedido y me devuelve la id;
     $id_pedido = $dao_pedido->insertar_pedido($pedido_receta);

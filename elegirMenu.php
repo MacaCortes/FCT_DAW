@@ -116,7 +116,8 @@ if (isset($_POST['continuar_pedido'])) {
         $id_usuario = $_SESSION['loginUsuario']['id_usuario'];
         //come es un pedido de menu la id_receta es null
         $id_receta=null;
-        $pedido_receta = new pedido($fecha, $id_usuario, $precioTotal,$id_receta);      
+        $estado="en proceso";
+        $pedido_receta = new pedido($fecha, $id_usuario, $precioTotal,$id_receta,$estado);      
         // recojo en un arary lo nombre de los platos elegidos
         $arraynombresplatos = $dao_p->nombresPlatos($arrayId_plato);
         

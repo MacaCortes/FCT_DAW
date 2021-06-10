@@ -48,8 +48,8 @@ if(isset($_POST['continuar_pedido'])){
     $_SESSION['pedido_receta']['precio_total']=$precio_total;   
     $id_usuario = $_SESSION['loginUsuario']['id_usuario']; 
     $_SESSION['pedido_receta']['id_receta']=$id_receta;
-    
-    $pedido_receta = new pedido($fecha_envio, $id_usuario, $precio_total,$id_receta);
+    $estado="en reparto";
+    $pedido_receta = new pedido($fecha_envio, $id_usuario, $precio_total,$id_receta,$estado);
     $mensajeOK = true;
     }
 }

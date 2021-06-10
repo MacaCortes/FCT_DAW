@@ -18,7 +18,7 @@ public function __construct($dificultad_r,$link_video,$link_doc_receta,$id_plato
     $this->link_doc_receta=$link_doc_receta;
     $this->id_plato=$id_plato;
     $this->precio_receta=$precio_receta;
-    $this->estado=$estado;
+   
 }
 //funciones getters 
 

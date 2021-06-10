@@ -77,13 +77,13 @@ and open the template in the editor.
         </header>       
         <div class=" menutop" id="mymenutop">
             <div class="row" id="login">
-                <form action="primerAcceso.php" method="POST"> 
+                <form action="primerAcceso.php" method="POST" > 
                     <!--estos input van a cambiar en relacion si ha iniciado sessiion o no -->
                     <?php
                     if ($ok != true):
                         ?>
-                    <div class="col-12">
-                    <input type="submit" name="nuevo" value="Nuevo Usuario" />
+                    <div class="">
+                        <input type="submit" name="nuevo" value="Nuevo Usuario" />
                     <input type="submit" name="viejo" value="Iniciar Sesiòn" />
                     </div>
                         <?php
@@ -109,14 +109,17 @@ and open the template in the editor.
                     ?>
                 </form>
             </div>
-            <div id="navegacion">
-                <nav id="menu"> 
+            <div class="navegacion" >
+                <nav id="menu" class="menu"> 
+                     <div clas="col-sm-12">
                     <div id="minilogoHidden"><img class ="minilogoHidden" style="max-width:70%; " src="imagenes/logopngMini.png"  style="display:hidden" alt="LOgo ComeBienSano mini"/></div>
+                     </div>
+                    <div clas="col-sm-12">
                     <a class="hijo" href="#idiomas">Inicio</a>
                     <a class="hijo" href="#menus">Menus</a>
                     <a class="hijo" href="#kits">Kits-Alimentos</a>
                     <a class="hijo" href="#contacto">Contacto</a>
-                     
+                    </div>
                 </nav>
             </div>
         </div>

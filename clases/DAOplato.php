@@ -36,7 +36,7 @@ public function DAOplato(){
         $mensaje= "El registro se ha efectuado satisfactoriamente, Gracias";
          $resultado->closeCursor();
         } catch (Exception $ex) {
-              echo $ex;
+            //  echo $ex;
            //el error 23000 hace referencia a la clave primaria  no puede haber dos iguales
             if($ex->getCode()==23000){
                 

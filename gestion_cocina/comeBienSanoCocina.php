@@ -65,14 +65,14 @@ if (isset($_POST["proximo"]))  {
         <header class=" banner">
          
             <div class="row justify-content-md-center">               
-                <div class="col-4">                   
+                <div class="col-md-4">                   
                 <img  src="../imagenes/logoAppGestion.png" class="imgestion" alt="logo gestion comeBiensano" style="margin-top: 3em">
                 </div>
-                <div class="col-4">
+                <div class="col-md-4">
                     <h1 class="orange text-center paddingbtn" > GESTION COCINA</h1>
                     <h2 class="text-center"><?php echo $nombre ?></h2>
                 </div>
-               <div class="col-3"  style="margin-top:9em">
+               <div class="col-md-3"  style="margin-top:9em">
                 <form class="paddingbtn "  action="" method="POST">                    
                     <input class=" btnapp " type="submit" name="cerrar_session" value="Cerrar Sesion" />
                 </form>
@@ -91,14 +91,14 @@ if (isset($_POST["proximo"]))  {
                 <hr/>
             </div>  
                 <div class="row">
-                <div class="col-4">
+                <div class="col-md-4">
                     <form   id="formtra" action="" method="POST" >
                         <input class="btnapp" type="submit" name="btn" value='PLATOS A PREPARAR'/>
                         <input class="btnapp" type="submit" name="btn" value='PRÓXIMOS PLATOS'/>                   
                     </form>
                 </div>
                  
-                <div class="col-8">                   
+                <div class="col-md-8">                   
                     <?php 
                     if(!isset($_POST['btn'])){
                        // echo $tablacocinar  ; 
